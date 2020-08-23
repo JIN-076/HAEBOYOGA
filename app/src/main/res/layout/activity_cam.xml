@@ -8,22 +8,23 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:text="3"
-      android:textAlignment="center"
+
       android:textColor="#000000"
-      android:textSize="70sp">
+      android:textSize="70sp"
+      android:layout_gravity="center_horizontal|top">
   </TextView>
 
   <SurfaceView
       android:id="@+id/surfaceView"
       android:layout_width="210dp"
-      android:layout_height="638dp"
-      android:layout_gravity="bottom" />
+      android:layout_height="637dp"
+      android:layout_gravity="left|bottom" />
 
   <ImageView
       android:id="@+id/imageView"
       android:layout_width="wrap_content"
       android:layout_height="638dp"
-      android:layout_gravity="bottom"
+      android:layout_gravity="left|bottom"
       android:layout_marginLeft="211dp"
       android:src="@drawable/excercise">
   </ImageView>

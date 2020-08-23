@@ -28,6 +28,7 @@ import android.media.ImageReader;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.HandlerThread;
 
@@ -46,6 +47,8 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.OutputStream;
@@ -90,14 +93,35 @@ public class CamActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON,
                 WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
-        setContentView(R.layout.activity_cam);
+        setContentView(R.layout.layout_camm);
 
 
         ImageButton button = findViewById(R.id.take_photo);
+        final TextView count_view = findViewById(R.id.count_view);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                takePicture();
+                count_view.setText("3");
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        count_view.setText("2");
+                        Handler handler1 = new Handler();
+                        handler1.postDelayed(new Runnable() {
+                            public void run() {
+                                count_view.setText("1");
+                                Handler handler2 = new Handler();
+                                handler2.postDelayed(new Runnable() {
+                                    public void run() {
+                                        count_view.setText("찰칵");
+                                        takePicture();
+                                    }
+                                }, 1000);
+                            }
+                        }, 1000);
+                    }
+                }, 1000);
+
             }
         });
 
@@ -333,9 +357,6 @@ public class CamActivity extends AppCompatActivity {
         }
     }
 
-
-    //출처 - https://codeday.me/ko/qa/20190310/39556.html
-
     /**
      * A copy of the Android internals  insertImage method, this method populates the
      * meta data with DATE_ADDED and DATE_TAKEN. This fixes a common problem where media
@@ -432,7 +453,7 @@ public class CamActivity extends AppCompatActivity {
 
     private void updateTextureViewSize(int viewWidth, int viewHeight) {
         Log.d("@@@", "TextureView Width : " + viewWidth + " TextureView Height : " + viewHeight);
-        mSurfaceView.setLayoutParams(new FrameLayout.LayoutParams(viewWidth, viewHeight));
+        mSurfaceView.setLayoutParams(new LinearLayout.LayoutParams(viewWidth, viewHeight));
     }
 
 

@@ -18,18 +18,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FinalActivity"></activity>
-        <activity android:name=".CamActivity2" />
-        <activity android:name=".SkipActivity" />
-        <activity android:name=".CountActivity" />
-        <activity android:name=".LoadingActivity" />
-        <activity android:name=".MainActivity">
+
+        <activity android:name=".LoadingActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".FinalActivity"/>
+        <activity android:name=".CamActivity2" />
+        <activity android:name=".SkipActivity" />
+        <activity android:name=".CountActivity" />
+
+        <activity android:name=".MainActivity"/>
+
         <activity android:name=".mypage_be" />
         <activity android:name=".mypage_af" />
         <activity android:name=".training_list_yoga" />

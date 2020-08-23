@@ -53,7 +53,7 @@ public class training_list_pilates extends AppCompatActivity {
                 String selected_item = (String)adapterView.getItemAtPosition(position);
 
                 if(selected_item.equals("소도구 필라테스")){
-                    Intent intent0 = new Intent(getApplicationContext(),main_page.class);//지인쓰 카메라쪽으로 갈 예정
+                    Intent intent0 = new Intent(getApplicationContext(),MainActivity.class);//지인쓰 카메라쪽으로 갈 예정
                     startActivity(intent0);
                 }
                 else if(selected_item.equals("매트 필라테스")){
