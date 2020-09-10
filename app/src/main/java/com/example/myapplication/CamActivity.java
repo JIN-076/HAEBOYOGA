@@ -47,6 +47,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -54,6 +55,7 @@ import android.widget.Toast;
 import java.io.OutputStream;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
+import java.util.Date;
 
 public class CamActivity extends AppCompatActivity {
 
@@ -426,10 +428,14 @@ public class CamActivity extends AppCompatActivity {
             Bitmap bitmap = null;
             try {
                 bitmap = getRotatedBitmap(data[0], mDeviceRotation);
+//                MediaStore.Images.Media.insertImage(getApplicationContext().getContentResolver(), bitmap ,"nameofimage" , "description");
+//                ImageView camImage = findViewById(R.id.imageView);
+//                camImage.setImageBitmap(bitmap);
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            insertImage(getContentResolver(), bitmap, "" + System.currentTimeMillis(), "");
+            insertImage(getContentResolver(), bitmap, "" + new Date(System.currentTimeMillis()), "");
+
 
             return null;
         }

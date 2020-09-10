@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity{
             }
             else {
                 if (MainActivity.n == 0) {
-                    Intent intent1 = new Intent(getApplicationContext(), CamActivity.class);//지인쓰 카메라쪽으로 갈 예정
+                    Intent intent1 = new Intent(getApplicationContext(), training_list_yoga.class);//지인쓰 카메라쪽으로 갈 예정
                     startActivity(intent1);
                 } else if (MainActivity.n == 1) {
                     Intent intent2 = new Intent(getApplicationContext(), training_list_pilates.class);//지인쓰 카메라쪽으로 갈 예정

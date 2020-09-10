@@ -22,7 +22,7 @@ public class FinalActivity extends AppCompatActivity {
         retry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent2 = new Intent(getApplicationContext(),CamActivity.class);//home 버튼으로 가는 버튼
+                Intent intent2 = new Intent(getApplicationContext(),MainActivity.class);//home 버튼으로 가는 버튼
                 startActivity(intent2);
             }
         });

@@ -22,7 +22,7 @@ public class SkipActivity extends AppCompatActivity {
         retry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent2 = new Intent(getApplicationContext(),CamActivity.class);//home 버튼으로 가는 버튼
+                Intent intent2 = new Intent(getApplicationContext(),CamActivity.class);// 현재 동작 다시하기 버튼
                 startActivity(intent2);
             }
         });
@@ -30,7 +30,7 @@ public class SkipActivity extends AppCompatActivity {
         nextS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent3 = new Intent(getApplicationContext(), CamActivity2.class);//my page로 돌가는 버튼
+                Intent intent3 = new Intent(getApplicationContext(), CamActivity2.class);// 다음 동작 넘어가기 버튼
                 startActivity(intent3);
             }
         });

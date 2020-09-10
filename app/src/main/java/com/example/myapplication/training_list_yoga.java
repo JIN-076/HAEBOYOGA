@@ -53,15 +53,15 @@ public class training_list_yoga extends AppCompatActivity {
                 String selected_item = (String)adapterView.getItemAtPosition(position);
 
                if(selected_item.equals("힐링 반야사")){
-                   Intent intent0 = new Intent(getApplicationContext(),MainActivity.class);//지인쓰 카메라쪽으로 갈 예정
+                   Intent intent0 = new Intent(getApplicationContext(),CamActivity.class);//지인쓰 카메라쪽으로 갈 예정
                    startActivity(intent0);
                }
                 else if(selected_item.equals("하타 요가")){
-                    Intent intent1 = new Intent(getApplicationContext(),mypage_af.class);//지인쓰 카메라쪽으로 갈 예정
+                    Intent intent1 = new Intent(getApplicationContext(),CamActivity.class);//지인쓰 카메라쪽으로 갈 예정
                     startActivity(intent1);
                 }
                 else if(selected_item.equals("마이링 플로우")){
-                    Intent intent2 = new Intent(getApplicationContext(),mypage_be.class);//지인쓰 카메라쪽으로 갈 예정
+                    Intent intent2 = new Intent(getApplicationContext(),CamActivity.class);//지인쓰 카메라쪽으로 갈 예정
                     startActivity(intent2);
                 }
 
