@@ -53,15 +53,15 @@ public class training_list_fitness extends AppCompatActivity {
                 String selected_item = (String)adapterView.getItemAtPosition(position);
 
                 if(selected_item.equals("스쿼트")){
-                    Intent intent0 = new Intent(getApplicationContext(),CamActivity.class);//지인쓰 카메라쪽으로 갈 예정
+                    Intent intent0 = new Intent(getApplicationContext(),CamActivity_fitness_1.class);//지인쓰 카메라쪽으로 갈 예정
                     startActivity(intent0);
                 }
                 else if(selected_item.equals("런지")){
-                    Intent intent1 = new Intent(getApplicationContext(),CamActivity.class);//지인쓰 카메라쪽으로 갈 예정
+                    Intent intent1 = new Intent(getApplicationContext(),CamActivity_fitness_2.class);//지인쓰 카메라쪽으로 갈 예정
                     startActivity(intent1);
                 }
                 else if(selected_item.equals("덤벨")){
-                    Intent intent2 = new Intent(getApplicationContext(),CamActivity.class);//지인쓰 카메라쪽으로 갈 예정
+                    Intent intent2 = new Intent(getApplicationContext(),CamActivity_fitness_3.class);//지인쓰 카메라쪽으로 갈 예정
                     startActivity(intent2);
                 }
 

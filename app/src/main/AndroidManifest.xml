@@ -18,7 +18,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RepeatActivity"></activity>
+        <activity android:name=".SkipActivity_yoga_3"></activity>
+        <activity android:name=".SkipActivity_yoga_2" />
+        <activity android:name=".SkipActivity_yoga_1" />
+        <activity android:name=".SkipActivity_pilates_3" />
+        <activity android:name=".SkipActivity_pilates_2" />
+        <activity android:name=".SkipActivity_pilates_1" />
+        <activity android:name=".SkipActivity_fitness_3" />
+        <activity android:name=".SkipActivity_fitness_2" />
+        <activity android:name=".SkipActivity_fitness_1" />
+        <activity android:name=".CamActivity_pilates_3" />
+        <activity android:name=".CamActivity_pilates_2" />
+        <activity android:name=".CamActivity_pilates_1" />
+        <activity android:name=".CamActivity_fitness_3" />
+        <activity android:name=".CamActivity_fitness_2" />
+        <activity android:name=".CamActivity_fitness_1" />
+        <activity android:name=".CamActivity_yoga_3" />
+        <activity android:name=".CamActivity_yoga_2" />
+        <activity android:name=".CamActivity_yoga_1" />
+        <activity android:name=".RepeatActivity" />
         <activity android:name=".LoadingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

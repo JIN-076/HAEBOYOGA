@@ -1,27 +1,65 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<?xml version="1.0" encoding="UTF-8"?>
+
+    <RelativeLayout
+    android:background="@color/colorBackground"
     android:layout_height="match_parent"
-    tools:context=".RepeatActivity">
+    android:layout_width="match_parent"
+    android:id="@+id/activity_main"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <ProgressBar
+        android:background="@drawable/drawable_circle_dark_blue"
+        android:layout_height="270dp"
+        android:layout_width="270dp"
+        android:id="@+id/progressBarCircle"
+        android:rotation="-90"
+        android:progressDrawable="@drawable/drawable_circle_yellow"
+        android:progress="100"
+        android:max="100"
+        android:indeterminate="false"
+        android:layout_centerInParent="true" style="?android:attr/progressBarStyleHorizontal"/>
+
+    <EditText
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:id="@+id/editTextMinute"
+        android:textColorHint="@color/colorYellow"
+        android:textColor="@color/colorYellow"
+        android:text="1"
+        android:minEms="5"
+        android:maxLines="1"
+        android:maxLength="15"
+        android:inputType="number"
+        android:hint="@string/hint_minute"
         android:gravity="center"
-        android:orientation="vertical">
+        android:layout_marginBottom="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/textViewTime"/>
 
-        <ProgressBar
-            android:id="@+id/circlerprogressbar"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:progress="5"
-            android:progress_background_color="#ECDCEC"
-            android:progress_color="#057509" />
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/textViewTime"
+        android:layout_centerInParent="true"
+        android:textColor="@color/colorYellow"
+        android:text="00:01:00"
+        android:textSize="40sp"/>
 
-    </LinearLayout>
+    <ImageView
+        android:layout_height="30dp"
+        android:layout_width="30dp"
+        android:id="@+id/imageViewReset"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:src="@drawable/icon_reset"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/textViewTime"/>
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:layout_height="50dp"
+        android:layout_width="50dp"
+        android:id="@+id/imageViewStartStop"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/icon_start"
+        android:layout_marginTop="20dp"/>
+</RelativeLayout>
