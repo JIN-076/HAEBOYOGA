@@ -8,15 +8,26 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
 public class training_list_fitness extends AppCompatActivity {
 
+    private RecyclerView recyclerView;
+    private CardAdapter adapter;
+    private ArrayList<Training> trainingArrayList;
+
     @Override
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.training_list_fitness);
+        initView();
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Trainging List with fitness");
+
         ListView listview = (ListView)findViewById(R.id.listview);
         // 3. 실제로 문자열 데이터를 저장하는데 사용할 ArrayList 객체를 생성합니다.
         final ArrayList<String> list = new ArrayList<>();
@@ -71,6 +82,26 @@ public class training_list_fitness extends AppCompatActivity {
         });
 
     }
+
+    private void initView() {
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        trainingArrayList = new ArrayList<>();
+        adapter = new CardAdapter(this, trainingArrayList);
+        recyclerView.setAdapter(adapter);
+        createListData();
+    }
+
+    private void createListData() {
+        Training training = new Training("스쿼트", 10, 40, "약");
+        trainingArrayList.add(training);
+        training = new Training("덤벨", 5, 60, "강");
+        trainingArrayList.add(training);
+        training = new Training("런지", 15, 50, "중");
+        trainingArrayList.add(training);
+        adapter.notifyDataSetChanged();
+    }
+
 }
 
 
