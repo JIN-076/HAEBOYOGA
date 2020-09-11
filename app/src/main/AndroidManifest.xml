@@ -18,7 +18,35 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SkipActivity_yoga_3"></activity>
+
+        <activity android:name=".LoadingActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity2" />
+        <activity android:name=".FinalActivity" />
+        <activity android:name=".CamActivity2" />
+        <activity android:name=".SkipActivity" />
+
+        <activity android:name=".mypage_be" />
+        <activity android:name=".mypage_af" />
+        <activity android:name=".training_list_yoga" />
+        <activity android:name=".training_list_pilates" />
+        <activity android:name=".training_list_fitness" />
+        <activity android:name=".PerActivity" />
+        <activity android:name=".CamActivity" />
+<!--        <activity android:name=".FragmentMypage">-->
+
+<!--        </activity>-->
+<!--        <activity android:name=".FragmentHome" />-->
+<!--        <activity-->
+<!--            android:name=".MainActivity2"-->
+<!--            android:label="@string/title_activity_main2" />-->
+
+        <activity android:name=".SkipActivity_yoga_3" />
         <activity android:name=".SkipActivity_yoga_2" />
         <activity android:name=".SkipActivity_yoga_1" />
         <activity android:name=".SkipActivity_pilates_3" />
@@ -37,24 +65,6 @@
         <activity android:name=".CamActivity_yoga_2" />
         <activity android:name=".CamActivity_yoga_1" />
         <activity android:name=".RepeatActivity" />
-        <activity android:name=".LoadingActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".FinalActivity" />
-        <activity android:name=".CamActivity2" />
-        <activity android:name=".SkipActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".mypage_be" />
-        <activity android:name=".mypage_af" />
-        <activity android:name=".training_list_yoga" />
-        <activity android:name=".training_list_pilates" />
-        <activity android:name=".training_list_fitness" />
-        <activity android:name=".PerActivity" />
-        <activity android:name=".CamActivity" />
     </application>
 
 </manifest>
