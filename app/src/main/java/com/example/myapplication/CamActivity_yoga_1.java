@@ -195,7 +195,7 @@ public class CamActivity_yoga_1 extends AppCompatActivity {
         mHandler = new Handler(handlerThread.getLooper());
         Handler mainHandler = new Handler(getMainLooper());
         try {
-            String mCameraId = "" + CameraCharacteristics.LENS_FACING_FRONT; // 후면 카메라 사용
+            String mCameraId = "" + CameraCharacteristics.LENS_FACING_BACK; // 후면 카메라 사용
 
             CameraManager mCameraManager = (CameraManager) this.getSystemService(Context.CAMERA_SERVICE);
             CameraCharacteristics characteristics = mCameraManager.getCameraCharacteristics(mCameraId);
