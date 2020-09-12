@@ -31,7 +31,7 @@ public class FragmentMypage extends Fragment {
         return_b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent0 = new Intent(getContext(),MainActivity.class);//home 버튼을 돌아가는 버튼
+                Intent intent0 = new Intent(getContext(),MainActivity2.class);//home 버튼을 돌아가는 버튼
                 startActivity(intent0);
             }
         }) ;
