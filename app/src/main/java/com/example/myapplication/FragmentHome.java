@@ -24,7 +24,7 @@ public class FragmentHome extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @NonNull ViewGroup container, @NonNull Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.main_fragment_home, container, false);
 
-        ContactDBHelper helper = new ContactDBHelper(this);
+        ContactDBHelper helper = new ContactDBHelper(getContext());
         SQLiteDatabase db = helper.getReadableDatabase();
         if(check==0)//어플을 처음 깔았을때만 table이 만들어진다.
         {helper.onStart(db);}

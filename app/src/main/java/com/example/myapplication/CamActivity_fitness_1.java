@@ -420,7 +420,55 @@ public class CamActivity_fitness_1 extends AppCompatActivity {
             super.onPostExecute(aVoid);
 
             Toast.makeText(CamActivity_fitness_1.this, "사진을 저장하였습니다.", Toast.LENGTH_SHORT).show();
+            final TextView timer_view = findViewById(R.id.count_view);
+            new Handler().postDelayed(new Runnable()
+            {
+                @Override
+                public void run()
+                {
+                    Toast.makeText(CamActivity_fitness_1.this,"성공하였습니다", Toast.LENGTH_SHORT).show(); // 여기에 토스트 메세지 적으면 돼!!!
+                }//여기에 딜레이 후 시작할 작업들을 입력
+            }, 1000);// 0.5초 정도 딜레이를 준 후 시작
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        public void run() {
+                            timer_view.setText("5");
+                            Handler handler0 = new Handler();
+                            handler0.postDelayed(new Runnable() {
+                                public void run() {
+                                    timer_view.setText("4");
+                                    Handler handler1 = new Handler();
+                                    handler1.postDelayed(new Runnable() {
+                                        public void run() {
+                                            timer_view.setText("3");
+                                            Handler handler2 = new Handler();
+                                            handler2.postDelayed(new Runnable() {
+                                                public void run() {
+                                                    timer_view.setText("2");
+                                                    Handler handler1 = new Handler();
+                                                    handler1.postDelayed(new Runnable() {
+                                                        public void run() {
+                                                            timer_view.setText("1");
+                                                        }
+                                                    }, 1000);
+                                                    takePicture();
+                                                }
+                                            }, 1000);
+                                        }
+                                    }, 1000);
+                                }
+                            }, 1000);
+                        }
+                    }, 1000);
+                }
+            }, 3000);
+
         }
+
+
 
         @Override
         protected Void doInBackground(Bitmap... data) {

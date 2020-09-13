@@ -21,10 +21,14 @@ public class FragmentMypage extends Fragment {
     Button buttonSave; // STORE 버튼
     Button buttonClear; // RESET 버튼 ??
 
+    public static FragmentMypage newInstance() {
+        return new FragmentMypage();
+    }
+
     public View onCreateView(@NonNull LayoutInflater inflater, @NonNull ViewGroup container, @NonNull Bundle savedInstanceState) {
         final View view =  inflater.inflate(R.layout.main_fragment_mypage, container, false);
 
-        final ContactDBHelper dbHelper = new ContactDBHelper(this);
+        final ContactDBHelper dbHelper = new ContactDBHelper(getContext());
         final SQLiteDatabase db = dbHelper.getReadableDatabase();
         dbHelper.onStart(db);
         final Cursor cursor = db.rawQuery(ContactDBCtrct.SQL_SELECT, null) ;
@@ -60,8 +64,9 @@ public class FragmentMypage extends Fragment {
                         Integer.toString(weight)  +
                         ")" ;
                 db.execSQL(sqlInsert);
-                Intent intent1 = new Intent(getContext(), mypage_af.class);//저장하기 버튼
-                startActivity(intent1);
+//                Intent intent1 = new Intent(getContext(), FragmentMypage_after.class);//저장하기 버튼
+//                startActivity(intent1);
+                ((MainActivity2)getActivity()).replaceFragment(FragmentMypage_after.newInstance());
             }
         });
 
@@ -82,20 +87,6 @@ public class FragmentMypage extends Fragment {
             }
         });
 
-        info_b = (Button) view.findViewById(R.id.b_info);
-        info_b.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(cursor == null || cursor.getCount() ==0) {
-                    Intent intent3 = new Intent(getContext(),FragmentMypage.class);//my page로 돌가는 버튼
-                    startActivity(intent3);
-                }
-                else {
-                    Intent intent2 = new Intent(getContext(),mypage_af.class);
-                    startActivity(intent2);
-                }
-            }
-        });
     return view;
     }
 }

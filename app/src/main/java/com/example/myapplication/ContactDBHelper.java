@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -7,7 +8,7 @@ public class ContactDBHelper extends SQLiteOpenHelper {
     public static final int DB_VERSION = 1 ;
     public static final String DBFILE_CONTACT = "homet.db" ;
 
-    public ContactDBHelper (FragmentHome context) {
+    public ContactDBHelper (Context context) {
         super (context, DBFILE_CONTACT, null, DB_VERSION);
     }
 
