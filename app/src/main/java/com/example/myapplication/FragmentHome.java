@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,33 +18,20 @@ public class FragmentHome extends Fragment {
 
     public static int n = 0;
     public int flag1 = 0;
-
+    public int check = 0;
     ImageView imageView = null;
 
     public View onCreateView(@NonNull LayoutInflater inflater, @NonNull ViewGroup container, @NonNull Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.main_fragment_home, container, false);
+
+        ContactDBHelper helper = new ContactDBHelper(this);
+        SQLiteDatabase db = helper.getReadableDatabase();
+        if(check==0)//어플을 처음 깔았을때만 table이 만들어진다.
+        {helper.onStart(db);}
+        final Cursor cursor = db.rawQuery(ContactDBCtrct.SQL_SELECT, null) ;
+
         imageView = (ImageView) view.findViewById(R.id.imageView);
         imageView.setOnClickListener(new MyListener());
-//        imageView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                if (flag1 == 0) {
-//                    Intent intent0 = new Intent(getContext(), training_list_yoga.class);//지인쓰 카메라쪽으로 갈 예정
-//                    startActivity(intent0);
-//                } else {
-//                    if (MainActivity.n == 0) {
-//                        Intent intent1 = new Intent(getContext(), training_list_yoga.class);//지인쓰 카메라쪽으로 갈 예정
-//                        startActivity(intent1);
-//                    } else if (MainActivity.n == 1) {
-//                        Intent intent2 = new Intent(getContext(), training_list_pilates.class);//지인쓰 카메라쪽으로 갈 예정
-//                        startActivity(intent2);
-//                    } else if (MainActivity.n == 2) {
-//                        Intent intent3 = new Intent(getContext(), training_list_fitness.class);//지인쓰 카메라쪽으로 갈 예정
-//                        startActivity(intent3);
-//                    }
-//                }
-//            }
-//        });
         ImageView right = (ImageView) view.findViewById(R.id.right);
         right.setOnClickListener(new View.OnClickListener() {
             @Override

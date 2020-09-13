@@ -82,7 +82,6 @@ public class CamActivity extends AppCompatActivity {
         ORIENTATIONS.append(ExifInterface.ORIENTATION_ROTATE_270, 270);
     }
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -329,10 +328,11 @@ public class CamActivity extends AppCompatActivity {
 
     public Bitmap getRotatedBitmap(Bitmap bitmap, int degrees) throws Exception {
         if (bitmap == null) return null;
-        if (degrees == 0) return bitmap;
+        if (degrees == 90) return bitmap;
 
         Matrix m = new Matrix();
-        m.setRotate(degrees, (float) bitmap.getWidth() / 2, (float) bitmap.getHeight() / 2);
+        m.postRotate(degrees);
+        //m.setRotate(degrees, (float) bitmap.getWidth() / 2, (float) bitmap.getHeight() / 2);
 
         return Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), m, true);
     }
